@@ -18,4 +18,13 @@ const fetchSmurfs = () => (dispatch) => {
     })
 }
 
-export default fetchSmurfs
+// const postSmurfs = () => (dispatch) => {
+//     axios
+//     .post('http://localhost:3333/smurfs', newSmurf)
+//     .then(res => {
+//         dispatch({ type: POST_SMURF, payload: newSmurf})
+//         console.log(res.data)
+//     })
+// }
+
+export { fetchSmurfs }
