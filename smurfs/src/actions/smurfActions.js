@@ -21,7 +21,7 @@ const fetchSmurfs = () => (dispatch) => {
     })
 }
 
-const postSmurfs = () => (dispatch, newSmurf) => {
+const postSmurfs = (newSmurf) => (dispatch) => {
     dispatch({ type: FETCH_SMURFS })
     console.log("Smurfs fetched line 24")
 

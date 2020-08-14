@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
-import { postSmurfs }  from '../actions'
+import { postSmurfs, fetchSmurfs }  from '../actions'
 
 const SmurfForm = props => {
     const [ name, setName ] = useState('')
@@ -33,7 +33,10 @@ const SmurfForm = props => {
             }
         
         console.log(newSmurf)
+
         props.postSmurfs(newSmurf)
+        props.fetchSmurfs()
+
         console.log("hey you made it below postSmurfs")
         
         setName('')
@@ -78,4 +81,4 @@ const SmurfForm = props => {
     )
 }
 
-export default connect(null, {postSmurfs})(SmurfForm)
+export default connect(null, {postSmurfs, fetchSmurfs})(SmurfForm)

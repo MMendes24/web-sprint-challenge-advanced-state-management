@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import { fetchSmurfs }  from '../actions'
 
+
 import Smurf from './Smurf'
 
 const SmurfList = props => {

@@ -14,6 +14,7 @@ const initialState = {
 const smurfReducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_SMURFS:
+            console.log("fetching smurfs")
             return {
                 ...state,
                 isLoading: true,
