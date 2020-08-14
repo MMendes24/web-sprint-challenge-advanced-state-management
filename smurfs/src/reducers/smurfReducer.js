@@ -7,6 +7,8 @@ const initialState = {
 
     //from API
     data: [],
+
+    //for Form
 }
 
 const smurfReducer = (state = initialState, action) => {
