@@ -6,7 +6,7 @@ const initialState = {
     error: "",
 
     //from API
-    data: "",
+    data: [],
 }
 
 const smurfReducer = (state = initialState, action) => {
@@ -34,6 +34,7 @@ const smurfReducer = (state = initialState, action) => {
                     error: "Oh no!"
                 }
             }
+
         default:
             return state
     }
