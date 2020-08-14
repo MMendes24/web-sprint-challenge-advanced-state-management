@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
+
+import { postSmurfs }  from '../actions'
 
 const SmurfForm = props => {
     const [ name, setName ] = useState('')
-    const [ age, setAge ] = useState('')
-    const [ height, setHeight ] = useState('')
+    const [ age, setAge ] = useState(0)
+    const [ height, setHeight ] = useState('0cm')
 
     const handleChanges = e => {
         setName(e.target.value)
@@ -17,10 +20,31 @@ const SmurfForm = props => {
         setHeight(e.target.value)
     }
 
+    const onSubmit = e => {
+        e.preventDefault()
+
+        const newSmurf = 
+
+            {
+                name: name,
+                age: age,
+                height: height,
+                id: new Date(),
+            }
+        
+        console.log(newSmurf)
+        props.postSmurfs(newSmurf)
+        console.log("hey you made it below postSmurfs")
+        
+        setName('')
+        setAge('')
+        setHeight('')
+    }
+
     return (
         <section className="form-section">
             <h2>Create a Smurf:</h2>
-            <form className="smurf-form">
+            <form className="smurf-form" onSubmit={onSubmit}>
                 <label>Your Smurf's Name:&nbsp;
                     <input
                     type="text"
@@ -54,4 +78,4 @@ const SmurfForm = props => {
     )
 }
 
-export default SmurfForm
+export default connect(null, {postSmurfs})(SmurfForm)

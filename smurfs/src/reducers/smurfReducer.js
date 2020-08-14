@@ -1,4 +1,4 @@
-import { FETCH_SMURFS, FETCH_SMURFS_SUCCESS, FETCH_SMURFS_FAIL } from '../actions'
+import { FETCH_SMURFS, FETCH_SMURFS_SUCCESS, FETCH_SMURFS_FAIL, POST_SMURF } from '../actions'
 
 const initialState = {
     // local data
@@ -34,6 +34,16 @@ const smurfReducer = (state = initialState, action) => {
                     ...state,
                     isLoading: false,
                     error: "Oh no!"
+                }
+            }
+            case POST_SMURF: {
+                console.log("you made it to the reducer")
+                return {
+                    ...state,
+                    isLoading: false,
+                    error: "",
+
+                    data: [...state.data, action.payload]
                 }
             }
 
